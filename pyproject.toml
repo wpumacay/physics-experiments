@@ -18,3 +18,21 @@ dev = [
     "pybind11-stubgen>=2.5.4",
     "ruff>=0.12.7",
 ]
+
+[tool.ruff]
+target-version = "py310"
+line-length = 80
+
+[tool.ruff.format]
+quote-style = "double"
+indent-style = "space"
+line-ending = "auto"
+docstring-code-format = false
+
+[tool.ruff.lint]
+select = ["F", "E", "W", "I"]
+ignore = [
+    "C408", # dict() calls
+    "C901", # function complexity
+    "E501", # line too long (handled by line-length setting
+]
